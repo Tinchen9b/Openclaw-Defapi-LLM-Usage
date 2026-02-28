@@ -1,6 +1,6 @@
 # OpenClaw + Defapi (Gemini 3 Pro) Setup Guide
 
-This guide documents a working setup for using **Defapi** with **OpenClaw 2026.2.26** and `google/gemini-3-pro`.
+This guide documents a working setup for using [**Defapi**](https://defapi.org) with [**OpenClaw 2026.2.26**](https://openclaw.ai/) and `google/gemini-3-pro`.
 
 ## Why this guide exists
 
@@ -71,3 +71,30 @@ Example:
     }
   }
 }
+
+```
+
+## 2) Configure API key in auth-profiles.json
+
+
+Example:
+
+```json
+
+{
+  "profiles": {
+    "defapi:gemini": {
+      "provider": "defapi",
+      "mode": "token",
+      "token": "YOUR_DEFAPI_KEY"
+    }
+  },
+  "lastGood": {
+    "defapi": "defapi:gemini"
+  }
+}
+```
+
+## 3) Restart gateway
+
+``` openclaw gateway restart ```
